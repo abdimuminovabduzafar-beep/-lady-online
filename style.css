@@ -158,9 +158,10 @@ z-index:-1;
 
 .background-text span{
 position:absolute;
-color:rgba(212,175,55,.05);
-font-size:18px;
+color:rgba(212,175,55,.025);
+font-size:15px;
 font-weight:700;
+letter-spacing:2px;
 animation:float 35s linear infinite;
 white-space:nowrap;
 }
