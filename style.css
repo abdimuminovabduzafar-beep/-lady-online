@@ -192,13 +192,17 @@ box-shadow:0 0 35px #d4af37;
 
 /* Logo */
 
-.logo{
+.logo{.logo{
+font-size:60px;
+font-weight:900;
+color:#d4af37;
+text-align:center;
+letter-spacing:4px;
+text-shadow:0 0 20px rgba(212,175,55,.6);
+animation:shine 4s infinite;
+background:none;
+}
 
-position:relative;
-
-display:inline-block;
-
-overflow:hidden;
 
 }
 
