@@ -369,3 +369,44 @@ transform:translateY(0);
 transform:translateY(-10px);
 }
 }
+/* Premium oltin zarrachalar */
+
+body::before,
+body::after{
+content:"";
+position:fixed;
+width:8px;
+height:8px;
+background:#d4af37;
+border-radius:50%;
+box-shadow:
+120px 200px #d4af37,
+250px 80px #fff,
+420px 350px #d4af37,
+600px 180px #fff,
+850px 500px #d4af37,
+1100px 120px #fff,
+1300px 420px #d4af37;
+opacity:.25;
+animation:particles 25s linear infinite;
+pointer-events:none;
+z-index:-2;
+}
+
+body::after{
+animation-duration:40s;
+filter:blur(2px);
+opacity:.15;
+}
+
+@keyframes particles{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-1200px);
+}
+
+}
