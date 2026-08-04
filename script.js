@@ -1,8 +1,9 @@
-let count = Number(localStorage.getItem("lady_counter") || 0);
-count++;
-localStorage.setItem("lady_counter", count);
+// Visitor Counter (faqat shu brauzer uchun)
 
-const el = document.getElementById("counter");
-if (el) {
-  el.textContent = count;
-}
+let visitors = Number(localStorage.getItem("lady_visitors") || 0);
+
+visitors++;
+
+localStorage.setItem("lady_visitors", visitors);
+
+document.getElementById("counter").textContent = visitors;
