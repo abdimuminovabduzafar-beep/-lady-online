@@ -318,3 +318,54 @@ pointer-events:none;
 }
 
 }
+/* Logo orqasidagi nur */
+
+.logo{
+position:relative;
+display:inline-block;
+z-index:2;
+}
+
+.logo::before{
+content:"";
+position:absolute;
+left:50%;
+top:50%;
+width:220px;
+height:220px;
+transform:translate(-50%,-50%);
+background:radial-gradient(circle,
+rgba(212,175,55,.35),
+transparent 70%);
+filter:blur(30px);
+animation:glow 4s ease-in-out infinite;
+z-index:-1;
+}
+
+@keyframes glow{
+0%,100%{
+transform:translate(-50%,-50%) scale(1);
+opacity:.5;
+}
+
+50%{
+transform:translate(-50%,-50%) scale(1.25);
+opacity:1;
+}
+}
+
+/* Karta */
+
+.glass-card{
+animation:floatCard 6s ease-in-out infinite;
+}
+
+@keyframes floatCard{
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+}
