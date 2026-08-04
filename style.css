@@ -2,282 +2,229 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Poppins",sans-serif;
+font-family:'Inter',sans-serif;
 }
 
 body{
-background:#ffffff;
+background:#f5f5f7;
 color:#111;
 overflow-x:hidden;
 min-height:100vh;
 }
 
-#intro{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100vh;
-background:#fff;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-animation:introHide 2.5s forwards;
-}
-
-.intro-logo{
-font-size:clamp(40px,8vw,72px);
-font-weight:900;
-color:#d4af37;
-letter-spacing:6px;
-animation:logoGlow 2s infinite;
-}
-
-@keyframes introHide{
-0%,80%{
-opacity:1;
-}
-100%{
-opacity:0;
-visibility:hidden;
-}
-}
-
-@keyframes logoGlow{
-0%,100%{
-text-shadow:0 0 10px rgba(212,175,55,.3);
-}
-50%{
-text-shadow:0 0 30px rgba(212,175,55,.8);
-}
-}
-
-.background{
+.bg{
 position:fixed;
 inset:0;
-z-index:-1;
-overflow:hidden;
-background:#f5f5f7;
+background:
+radial-gradient(circle at top left,#ffffff,#ececec 45%,#f5f5f7 100%);
+z-index:-2;
 }
 
-.blur{
+.bg::before{
+content:"";
 position:absolute;
-width:320px;
-height:320px;
+width:350px;
+height:350px;
 border-radius:50%;
-filter:blur(90px);
-opacity:.25;
-}
-
-.blur1{
-background:#ffd54f;
+background:rgba(255,255,255,.9);
+filter:blur(80px);
 top:-120px;
 left:-120px;
+animation:move1 18s infinite ease-in-out;
 }
 
-.blur2{
-background:#e0e0e0;
-bottom:-120px;
-right:-120px;
+.bg::after{
+content:"";
+position:absolute;
+width:300px;
+height:300px;
+border-radius:50%;
+background:rgba(220,220,220,.7);
+filter:blur(90px);
+bottom:-100px;
+right:-100px;
+animation:move2 20s infinite ease-in-out;
 }
-/* MAIN */
 
-main{
-min-height:100vh;
+@keyframes move1{
+50%{
+transform:translate(180px,120px);
+}
+}
+
+@keyframes move2{
+50%{
+transform:translate(-160px,-120px);
+}
+}
+
+.hero{
 display:flex;
 justify-content:center;
 align-items:center;
-padding:25px;
+min-height:100vh;
+padding:20px;
 }
 
 .card{
 width:100%;
 max-width:430px;
 background:rgba(255,255,255,.75);
-backdrop-filter:blur(25px);
--webkit-backdrop-filter:blur(25px);
-border:1px solid rgba(255,255,255,.6);
+backdrop-filter:blur(30px);
+-webkit-backdrop-filter:blur(30px);
 border-radius:32px;
-padding:35px 25px;
+padding:40px 28px;
+border:1px solid rgba(255,255,255,.8);
 box-shadow:
-0 15px 45px rgba(0,0,0,.08),
-0 0 30px rgba(212,175,55,.10);
-animation:cardFloat 6s ease-in-out infinite;
-}
-
-@keyframes cardFloat{
-0%,100%{
-transform:translateY(0);
-}
-50%{
-transform:translateY(-8px);
-}
-}
-
+0 20px 60px rgba(0,0,0,.08);
+} 
 .logo{
-text-align:center;
 font-size:42px;
 font-weight:900;
-color:#d4af37;
+color:#C9A227;
+text-align:center;
 letter-spacing:3px;
 margin-bottom:10px;
+animation:glow 4s ease-in-out infinite;
 }
 
-.store{
+@keyframes glow{
+0%,100%{
+text-shadow:0 0 10px rgba(201,162,39,.25);
+}
+50%{
+text-shadow:
+0 0 20px rgba(201,162,39,.5),
+0 0 40px rgba(201,162,39,.25);
+}
+}
+
+.premium{
 text-align:center;
-font-size:15px;
+font-size:14px;
 color:#777;
 margin-bottom:20px;
+letter-spacing:2px;
+text-transform:uppercase;
 }
 
 h1{
+font-size:34px;
+font-weight:800;
 text-align:center;
-font-size:32px;
-margin-bottom:15px;
+line-height:1.2;
+margin-bottom:18px;
 }
 
 .desc{
 text-align:center;
 color:#666;
-line-height:1.8;
+line-height:1.7;
 margin-bottom:35px;
 }
 
 .buttons{
 display:flex;
 flex-direction:column;
-gap:15px;
+gap:16px;
 }
 
 .btn{
 display:flex;
 align-items:center;
 justify-content:center;
-padding:18px;
+height:58px;
 border-radius:18px;
+background:#111;
+color:#fff;
 text-decoration:none;
 font-weight:700;
-font-size:18px;
-color:#fff;
-background:#111;
+font-size:17px;
 transition:.3s;
 }
 
 .btn:hover{
-background:#d4af37;
+background:#C9A227;
 color:#000;
-transform:translateY(-4px);
+transform:translateY(-3px);
+box-shadow:0 12px 30px rgba(201,162,39,.25);
 }
 
-.visitor{
-margin-top:30px;
+.visitors{
+margin-top:28px;
 text-align:center;
-font-size:18px;
+font-size:17px;
 font-weight:700;
-color:#555;
+color:#666;
 }
+
+#counter{
+color:#C9A227;
+font-size:22px;
+} 
+/* Footer */
 
 footer{
-padding:25px;
+margin-top:40px;
 text-align:center;
-color:#777;
-font-size:14px;
+font-size:13px;
+color:#999;
+letter-spacing:1px;
 }
 
-@media(max-width:380px){
+/* Card animatsiyasi */
 
 .card{
-padding:25px 18px;
+animation:cardFloat 6s ease-in-out infinite;
 }
 
-.logo{
-font-size:34px;
-}
+@keyframes cardFloat{
 
-h1{
-font-size:26px;
-}
-
-.btn{
-font-size:16px;
-padding:16px;
-}
-
-}
-/* Premium animatsiyalar */
-
-.logo{
-position:relative;
-overflow:hidden;
-animation:logoFloat 5s ease-in-out infinite;
-}
-
-.logo::after{
-content:"";
-position:absolute;
-top:0;
-left:-150%;
-width:45%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.95),
-transparent
-);
-transform:skewX(-25deg);
-animation:shine 5s infinite;
-}
-
-@keyframes shine{
-0%{
-left:-150%;
-}
-100%{
-left:180%;
-}
-}
-
-@keyframes logoFloat{
 0%,100%{
 transform:translateY(0);
 }
+
 50%{
-transform:translateY(-4px);
-}
-}
-
-/* Tugmalar */
-
-.instagram{
-background:linear-gradient(135deg,#833AB4,#E1306C,#FCAF45);
+transform:translateY(-8px);
 }
 
-.telegram{
-background:#229ED9;
 }
 
-.owner{
-background:#111;
+/* Tugmalar bosilganda */
+
+.btn:active{
+transform:scale(.97);
 }
 
-.instagram:hover,
-.telegram:hover,
-.owner:hover{
-transform:translateY(-5px) scale(1.02);
-box-shadow:0 15px 35px rgba(0,0,0,.18);
+/* Scrollbar */
+
+::-webkit-scrollbar{
+width:8px;
 }
 
-/* Visitor */
-
-#counter{
-font-size:22px;
-font-weight:800;
-color:#d4af37;
+::-webkit-scrollbar-thumb{
+background:#d6d6d6;
+border-radius:20px;
 }
 
 /* Responsive */
+
+@media (max-width:768px){
+
+.card{
+max-width:420px;
+padding:35px 24px;
+}
+
+.logo{
+font-size:38px;
+}
+
+h1{
+font-size:30px;
+}
+
+}
 
 @media (max-width:480px){
 
@@ -286,6 +233,7 @@ padding:15px;
 }
 
 .card{
+padding:28px 20px;
 border-radius:24px;
 }
 
@@ -293,8 +241,8 @@ border-radius:24px;
 font-size:32px;
 }
 
-.store{
-font-size:14px;
+.premium{
+font-size:13px;
 }
 
 h1{
@@ -306,8 +254,29 @@ font-size:15px;
 }
 
 .btn{
+height:54px;
 font-size:16px;
-padding:15px;
+}
+
+.visitors{
+font-size:15px;
+}
+
+}
+
+@media (max-width:340px){
+
+.logo{
+font-size:28px;
+}
+
+h1{
+font-size:22px;
+}
+
+.btn{
+font-size:15px;
+height:50px;
 }
 
 }
