@@ -235,7 +235,86 @@ left:-120%;
 100%{
 
 left:150%;
+/* Premium qora fon */
 
+body{
+
+background:
+radial-gradient(circle at top,#2a2a2a 0%,#111 35%,#050505 100%);
+
+background-attachment:fixed;
+
+}
+
+/* Yorug'lik effektlari */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:-200px;
+
+left:-200px;
+
+width:500px;
+
+height:500px;
+
+background:rgba(212,175,55,.08);
+
+filter:blur(120px);
+
+border-radius:50%;
+
+animation:moveLight 18s linear infinite;
+
+pointer-events:none;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+bottom:-250px;
+
+right:-250px;
+
+width:500px;
+
+height:500px;
+
+background:rgba(255,255,255,.04);
+
+filter:blur(150px);
+
+border-radius:50%;
+
+animation:moveLight2 22s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes moveLight{
+
+0%{transform:translate(0,0);}
+50%{transform:translate(250px,120px);}
+100%{transform:translate(0,0);}
+
+}
+
+@keyframes moveLight2{
+
+0%{transform:translate(0,0);}
+50%{transform:translate(-220px,-120px);}
+100%{transform:translate(0,0);}
+
+}
 }
 
 }
