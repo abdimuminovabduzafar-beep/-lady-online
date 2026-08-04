@@ -438,3 +438,37 @@ transform:translateY(-1200px);
 }
 
 }
+/* Apple uslubidagi premium karta */
+
+.glass-card{
+max-width:420px;
+margin:40px auto;
+padding:30px;
+border-radius:28px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(30px);
+
+-webkit-backdrop-filter:blur(30px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.45),
+0 0 40px rgba(212,175,55,.08);
+
+animation:cardFloat 8s ease-in-out infinite;
+}
+
+@keyframes cardFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+}
