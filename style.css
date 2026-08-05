@@ -213,22 +213,31 @@ box-shadow:0 16px 35px rgba(201,162,39,.30);
 
 .visitors{
 
-font-size:15px;
+margin-top:35px;
+
+text-align:center;
+
+font-size:13px;
 
 font-weight:500;
 
-color:#8a8a8a;
+color:#9a9a9a;
 
-letter-spacing:.5px;
+letter-spacing:1px;
 
-margin-top:30px;
+opacity:.8;
 
 }
 
 #counter{
+
+font-size:15px;
+
+font-weight:600;
+
 color:#C9A227;
-font-size:22px;
-} 
+
+}
 /* Footer */
 
 footer{
