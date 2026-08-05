@@ -99,24 +99,60 @@ box-shadow:
 
 }
 .logo{
-font-size:42px;
+
+font-size:52px;
+
 font-weight:900;
-color:#C9A227;
+
 text-align:center;
-letter-spacing:3px;
-margin-bottom:10px;
-animation:glow 4s ease-in-out infinite;
+
+letter-spacing:4px;
+
+color:#C9A227;
+
+position:relative;
+
+text-shadow:0 0 15px rgba(201,162,39,.25);
+
+overflow:hidden;
+
 }
 
-@keyframes glow{
-0%,100%{
-text-shadow:0 0 10px rgba(201,162,39,.25);
+.logo::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:45%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.95),
+transparent
+);
+
+transform:skewX(-20deg);
+
+animation:shine 4s infinite;
+
 }
-50%{
-text-shadow:
-0 0 20px rgba(201,162,39,.5),
-0 0 40px rgba(201,162,39,.25);
+
+@keyframes shine{
+
+100%{
+
+left:160%;
+
 }
+
 }
 
 .premium{
