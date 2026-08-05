@@ -81,7 +81,7 @@ backdrop-filter:blur(40px);
 border:1px solid rgba(255,255,255,.9);
 
 box-shadow:
-0 20px 60px rgba(0,0,0,.08),
+0 30px 80px rgba(0,0,0,.10),
 0 8px 20px rgba(255,255,255,.9) inset;
 
 animation:cardFloat 6s ease-in-out infinite;
@@ -112,7 +112,9 @@ color:#C9A227;
 
 position:relative;
 
-text-shadow:0 0 15px rgba(201,162,39,.25);
+text-shadow:
+0 0 8px rgba(201,162,39,.15),
+0 0 18px rgba(201,162,39,.12);
 
 overflow:hidden;
 
@@ -207,11 +209,17 @@ box-shadow:0 12px 30px rgba(201,162,39,.25);
 }
 
 .visitors{
-margin-top:28px;
-text-align:center;
-font-size:17px;
-font-weight:700;
-color:#666;
+
+font-size:15px;
+
+font-weight:500;
+
+color:#8a8a8a;
+
+letter-spacing:.5px;
+
+margin-top:30px;
+
 }
 
 #counter{
